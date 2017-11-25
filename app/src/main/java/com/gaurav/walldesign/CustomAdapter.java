@@ -1,10 +1,16 @@
 package com.gaurav.walldesign;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,13 +19,14 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 /**
- * Created by raiga on 11/19/2017.
+  *Created by raiga on 11/19/2017.
  */
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
@@ -48,10 +55,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     public void onBindViewHolder(final MyViewHolder holder, int position) {
         CustomPojo list_items=list_members.get(position);
         Picasso.with(context)
-                .load("https://unsplash.com/photos/"+list_items.getId()+"/download")
+                .load(list_items.getId()+"?w=200&h=240")
                 .centerCrop()
                 .error(R.drawable.error)
-                .resize(500,600)
+                .resize(200,240)
                 .placeholder(R.drawable.placeholder)
                 .into(holder.imageView);
 
@@ -79,13 +86,15 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
             imageView =(ImageView)itemView.findViewById(R.id.imageview);
         }
 
+
+        @SuppressLint("NewApi")
         @Override
         public void onClick(View v) {
+
             //CustomPojo list_items=list_members.get(position);
             //Intent intent = new Intent(context, wallapaperShow.class);
             //intent.putExtra("Id",list_items.getId());
             //context.startActivity(intent);
-
 
         }
 

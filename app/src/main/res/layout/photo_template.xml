@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:elevation="24dp"
+<LinearLayout android:elevation="24dp"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/photo_template"
     android:layout_width="match_parent"
-    android:layout_height="280dp">
+    android:layout_height="280dp"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        app:cardUseCompatPadding="true"
-        app:cardCornerRadius="6dp"
-        android:layout_gravity="center_horizontal"
-        app:cardElevation="12dp">
+<android.support.v7.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="6dp"
+    android:layout_gravity="center_horizontal"
+    app:cardElevation="12dp">
 
     <ImageView
         android:scaleType="fitXY"
         android:id="@+id/imageview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/ic_launcher_background"/>
+        android:src="@drawable/ic_launcher_background"
+        android:transitionName="simple_activity_transition"
+        tools:ignore="UnusedAttribute"/>
 
-    </android.support.v7.widget.CardView>
+</android.support.v7.widget.CardView>
 
 </LinearLayout>
